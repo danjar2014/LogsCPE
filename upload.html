@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Configuration Manager Media Portal</title>
+    <!-- Charger FontAwesome localement -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <!-- Charger le CSS personnalisé -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="assets/images/bnp-paribas-logo.png" alt="BNP Paribas Logo" class="logo">
+            <h1>Configuration Manager Media Portal</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="upload-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="bulk">Bulk Import</button>
+                <button class="tab-button" data-tab="simple">Simple Import</button>
+            </div>
+
+            <!-- Section Bulk Import -->
+            <div class="tab-content active" id="bulk">
+                <h2>Bulk Import - importCIS.csv</h2>
+                <form id="bulkUploadForm" class="upload-form">
+                    <div class="form-group">
+                        <label for="bulkFileUpload">Upload File (must be named importCIS.csv):</label>
+                        <input type="file" id="bulkFileUpload" name="fileUpload" accept=".csv" required>
+                        <span class="error-message" id="bulkFileUploadError"></span>
+                    </div>
+                    <div id="bulkUploadButtonContainer">
+                        <button type="submit" id="bulkUploadButton" class="upload-button" disabled>
+                            <i class="fas fa-arrow-up"></i> Upload
+                        </button>
+                    </div>
+                    <p id="bulkUploadStatus" class="upload-status"></p>
+                    <p id="bulkUploadProgress" class="upload-progress" style="display: none;">Uploading in progress please wait refresh page after 5mins</p>
+                </form>
+            </div>
+
+            <!-- Section Simple Import -->
+            <div class="tab-content" id="simple">
+                <h2>Simple Import</h2>
+                <form id="simpleUploadForm" class="upload-form">
+                    <div class="form-group">
+                        <label for="simpleMachineName">Machine Name (must start with PARM, e.g., PARM00316133):</label>
+                        <input type="text" id="simpleMachineName" name="machineName" placeholder="e.g., PARM00316133" required>
+                        <span class="error-message" id="simpleMachineNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="simpleMacAddress">MAC Address (format: 00:FF:CF:04:AC:C3):</label>
+                        <input type="text" id="simpleMacAddress" name="macAddress" placeholder="e.g., 00:FF:CF:04:AC:C3" required>
+                        <span class="error-message" id="simpleMacAddressError"></span>
+                    </div>
+                    <div id="simpleUploadButtonContainer">
+                        <button type="submit" id="simpleUploadButton" class="upload-button" disabled>
+                            <i class="fas fa-arrow-up"></i> Upload
+                        </button>
+                    </div>
+                    <p id="simpleUploadStatus" class="upload-status"></p>
+                    <p id="simpleUploadProgress" class="upload-progress" style="display: none;">Uploading in progress please wait refresh page after 5mins</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">@ 2025 BNP Paribas</p>
+            <img src="assets/images/DW.png" alt="DW Logo" class="footer-logo">
+        </div>
+    </footer>
+
+    <!-- Charger le script JavaScript -->
+    <script src="js/upload.js"></script>
+</body>
+</html>

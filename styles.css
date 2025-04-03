@@ -1,0 +1,361 @@
+/* Définir la police Roboto localement */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Si vous utilisez une police système, commentez les @font-face ci-dessus et décommentez la ligne suivante dans le * sélecteur */
+/* font-family: Arial, sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Remplacez par Arial si vous n'utilisez pas Roboto */
+}
+
+body {
+    background-color: #f4f7fa; /* Fond gris clair, cohérent avec une interface moderne */
+    color: #000000; /* Noir pour le texte, comme utilisé par BNP Paribas */
+    line-height: 1.6;
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #007348; /* Bangladesh Green pour l'en-tête */
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espace entre le logo et le titre */
+}
+
+.logo {
+    height: 40px; /* Ajustez la taille selon vos besoins */
+    width: auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0; /* Supprime la marge par défaut pour un meilleur alignement */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1; /* Permet au conteneur principal de prendre l'espace restant */
+}
+
+.description {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.section-card {
+    background-color: white;
+    width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.section-icon {
+    height: 4rem; /* Taille ajustée pour correspondre à l'icône LOG */
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.section-card i {
+    font-size: 3rem; /* Taille de l'icône LOG */
+    color: #008755; /* Spanish Viridian pour les icônes */
+    margin-bottom: 1rem;
+}
+
+.section-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000000; /* Noir pour les titres */
+}
+
+.section-card p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.section-card a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #39a87b; /* Medium Sea Green pour les boutons */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.section-card a:hover {
+    background-color: #6abb97; /* Green Sheen pour l'effet de survol */
+}
+
+/* Styles spécifiques pour BootMedia */
+.bootmedia-card {
+    border: 1px solid #e0e0e0; /* Bordure légère pour correspondre à l'image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Ombre plus légère */
+}
+
+.bootmedia-button {
+    background-color: #39a87b; /* Medium Sea Green pour le bouton */
+    padding: 0.75rem 2rem; /* Bouton plus large */
+    font-size: 1rem;
+    border-radius: 8px; /* Coins plus arrondis */
+}
+
+.bootmedia-button:hover {
+    background-color: #6abb97; /* Green Sheen pour l'effet de survol */
+}
+
+/* Styles pour le footer */
+footer {
+    background-color: #007348; /* Bangladesh Green, cohérent avec l'en-tête */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Pousse le footer en bas de la page */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+}
+
+.footer-logo {
+    height: 30px; /* Ajustez la taille selon vos besoins */
+    width: auto;
+}
+
+/* Styles pour la section d'upload */
+.upload-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.upload-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+/* Styles pour les onglets */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tab-button.active {
+    color: #007348; /* Bangladesh Green pour l'onglet actif */
+    border-bottom: 2px solid #007348;
+}
+
+.tab-button:hover {
+    color: #39a87b; /* Medium Sea Green au survol */
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #39a87b; /* Medium Sea Green pour le focus */
+}
+
+.error-message {
+    color: #e74c3c; /* Rouge pour les messages d'erreur */
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    min-height: 1.2rem; /* Réserve de l'espace pour éviter les sauts */
+}
+
+.upload-button {
+    background-color: #39a87b; /* Medium Sea Green pour le bouton */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px; /* Bouton arrondi pour un look moderne */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.upload-button i {
+    font-size: 1.2rem;
+}
+
+.upload-button:disabled {
+    background-color: #cccccc; /* Gris pour le bouton désactivé */
+    cursor: not-allowed;
+}
+
+.upload-button:hover:not(:disabled) {
+    background-color: #6abb97; /* Green Sheen pour l'effet de survol */
+    transform: translateY(-2px); /* Léger soulèvement au survol */
+}
+
+.upload-status {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.upload-progress {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #007348; /* Bangladesh Green pour le message */
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .section-card {
+        width: 100%;
+    }
+
+    .header-content {
+        flex-direction: column; /* Empile le logo et le titre sur les petits écrans */
+        gap: 0.5rem;
+    }
+
+    .logo {
+        height: 30px; /* Réduit la taille du logo sur mobile */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Réduit la taille du titre sur mobile */
+    }
+
+    .section-icon {
+        height: 3rem; /* Réduit la taille sur mobile */
+    }
+
+    .section-card i {
+        font-size: 2.5rem; /* Réduit la taille sur mobile */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Empile le texte et le logo sur mobile */
+        gap: 0.5rem;
+    }
+
+    .footer-logo {
+        height: 25px; /* Réduit la taille du logo sur mobile */
+    }
+
+    .upload-section {
+        padding: 1.5rem;
+    }
+
+    .tab-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
