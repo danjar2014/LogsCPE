@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             bulkFileExists = data.exists;
             if (bulkFileExists) {
-                bulkUploadButtonContainer.innerHTML = '<p class="error-message">Error: importCIS.csv already exists in C:\\temp. Please delete it before uploading a new file.</p>';
+                bulkUploadButtonContainer.innerHTML = '<p class="error-message">Provisioning in progress refresh after 5mins</p>'; // Message modifié
             } else {
                 validateBulkForm(); // Appeler la validation initiale si le fichier n'existe pas
             }
@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.success) {
                 bulkFileExists = true;
-                bulkUploadStatus.textContent = data.message;
-                bulkUploadButtonContainer.innerHTML = '<p class="error-message">Error: importCIS.csv already exists in C:\\temp. Please delete it before uploading a new file.</p>';
+                bulkUploadStatus.textContent = 'Uploading in progress'; // Message modifié
+                bulkUploadButtonContainer.innerHTML = '<p class="error-message">Provisioning in progress refresh after 5mins</p>'; // Message modifié
                 bulkForm.reset();
             } else {
                 bulkUploadStatus.textContent = 'Error: ' + data.message;

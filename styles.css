@@ -281,7 +281,7 @@ footer {
 
 .footer-content {
     display: flex;
-    justifying-content: space-between;
+    justify-content: space-between; /* Correction de la faute de frappe */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
