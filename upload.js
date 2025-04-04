@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // URL du serveur distant (remplacez par l'URL de votre serveur IIS)
-    const serverUrl = 'http://<votre-serveur>'; // Exemple : 'http://192.168.1.100'
+    const serverUrl = 'http://localhost'; // Exemple : 'http://192.168.1.100'
 
     // Gestion des sections
     const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
