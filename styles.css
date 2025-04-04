@@ -13,6 +13,14 @@
     font-style: normal;
 }
 
+/* Police comique pour "by DW" */
+@font-face {
+    font-family: 'Anime Ace Italic';
+    src: url('../assets/fonts/animeace2_ital.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
 /* Si vous utilisez une police système, commentez les @font-face ci-dessus et décommentez la ligne suivante dans le * sélecteur */
 /* font-family: Arial, sans-serif; */
 
@@ -29,50 +37,157 @@ body {
     line-height: 1.6;
     min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
     display: flex;
+}
+
+/* Bannière verticale à gauche */
+.sidebar {
+    width: 250px;
+    background-color: #f5f5f5; /* Gris clair comme dans la capture */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
     flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.cmmp-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007348; /* Vert foncé de BNP Paribas */
+}
+
+.by-dw-text {
+    font-family: 'Anime Ace Italic', 'Comic Sans MS', cursive; /* Utilisation de la police ajoutée */
+    font-size: 1rem;
+    color: #333;
+    text-transform: none; /* Empêche la transformation en majuscules */
+    font-style: italic; /* Force l'italique */
+}
+
+.sidebar-menu {
+    list-style: none;
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.sidebar-menu li {
+    margin: 0.5rem 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu a i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.sidebar-menu a:hover {
+    background-color: #e0e0e0; /* Gris plus foncé au survol */
+}
+
+.sidebar-menu a.active {
+    background-color: #007348; /* Bangladesh Green pour l'élément actif */
+    color: white;
+}
+
+/* Conteneur principal */
+.main-content {
+    margin-left: 250px; /* Largeur de la bannière */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #007348; /* Bangladesh Green pour l'en-tête */
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem; /* Espace entre le logo et le titre */
-}
-
-.logo {
-    height: 40px; /* Ajustez la taille selon vos besoins */
-    width: auto;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #007348; /* Bangladesh Green pour la bordure */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
     font-size: 1.8rem;
-    margin: 0; /* Supprime la marge par défaut pour un meilleur alignement */
+    color: #000000;
+    margin: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
-    flex: 1; /* Permet au conteneur principal de prendre l'espace restant */
+    flex: 1;
+}
+
+.content-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+.section-content {
+    display: none;
+}
+
+.section-content.active {
+    display: block;
 }
 
 .description {
-    background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
     text-align: center;
     font-size: 1rem;
     color: #555;
+}
+
+/* Liens externes dans la section Home */
+.links-section {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.external-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #39a87b; /* Medium Sea Green pour les liens */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.external-link:hover {
+    background-color: #6abb97; /* Green Sheen pour l'effet de survol */
 }
 
 .sections {
@@ -98,13 +213,13 @@ header h1 {
 }
 
 .section-icon {
-    height: 4rem; /* Taille ajustée pour correspondre à l'icône LOG */
+    height: 4rem;
     width: auto;
     margin-bottom: 1rem;
 }
 
 .section-card i {
-    font-size: 3rem; /* Taille de l'icône LOG */
+    font-size: 3rem;
     color: #008755; /* Spanish Viridian pour les icônes */
     margin-bottom: 1rem;
 }
@@ -154,12 +269,11 @@ header h1 {
 
 /* Styles pour le footer */
 footer {
-    background-color: #007348; /* Bangladesh Green, cohérent avec l'en-tête */
-    color: white;
+    background-color: #F5F5F5; /* Gris clair proche du blanc */
+    color: #333; /* Texte gris foncé pour contraste */
     padding: 1rem;
     text-align: center;
     width: 100%;
-    margin-top: auto; /* Pousse le footer en bas de la page */
 }
 
 .footer-content {
@@ -171,12 +285,35 @@ footer {
     padding: 0 1rem;
 }
 
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-bnp-logo {
+    height: 20px; /* Petite taille pour le logo */
+    width: auto;
+}
+
+.footer-bnp-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .footer-text {
     font-size: 0.9rem;
 }
 
 .footer-logo {
-    height: 30px; /* Ajustez la taille selon vos besoins */
+    height: 20px; /* Ajustez la taille selon vos besoins */
     width: auto;
 }
 
@@ -195,44 +332,6 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: #000000;
-}
-
-/* Styles pour les onglets */
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.tab-button {
-    background: none;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    color: #777;
-    cursor: pointer;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.tab-button.active {
-    color: #007348; /* Bangladesh Green pour l'onglet actif */
-    border-bottom: 2px solid #007348;
-}
-
-.tab-button:hover {
-    color: #39a87b; /* Medium Sea Green au survol */
-}
-
-.tab-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.tab-content.active {
-    display: block;
-    opacity: 1;
 }
 
 .upload-form {
@@ -316,17 +415,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
     .section-card {
         width: 100%;
-    }
-
-    .header-content {
-        flex-direction: column; /* Empile le logo et le titre sur les petits écrans */
-        gap: 0.5rem;
-    }
-
-    .logo {
-        height: 30px; /* Réduit la taille du logo sur mobile */
     }
 
     header h1 {
@@ -342,7 +440,12 @@ footer {
     }
 
     .footer-content {
-        flex-direction: column; /* Empile le texte et le logo sur mobile */
+        flex-direction: column; /* Empile les éléments sur mobile */
+        gap: 0.5rem;
+    }
+
+    .footer-left, .footer-right {
+        flex-direction: column;
         gap: 0.5rem;
     }
 
@@ -354,8 +457,34 @@ footer {
         padding: 1.5rem;
     }
 
-    .tab-button {
+    .links-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    .sidebar-menu li {
+        margin: 0 0.5rem;
+    }
+
+    .sidebar-menu a {
         padding: 0.5rem 1rem;
-        font-size: 0.9rem;
     }
 }

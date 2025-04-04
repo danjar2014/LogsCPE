@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMP</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Charger FontAwesome localement -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <!-- Charger le CSS personnalisé -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Bannière de navigation verticale à gauche -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">
+                <span class="cmmp-text">CMMP</span>
+                <span class="by-dw-text">by DW</span>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#home" class="active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="#provisioning" data-section="bulk">
+                    <i class="fas fa-arrow-up"></i> Provisioning
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Conteneur principal -->
+    <div class="main-content">
+        <header>
+            <h1>Configuration Manager Media Portal</h1>
+        </header>
+
+        <div class="container">
+            <div class="content-section">
+                <!-- Section Home -->
+                <div class="section-content active" id="home">
+                    <div class="description">
+                        <p>This Media Portal provides IT support teams an easy and secure way to download Configuration Manager client log files (generated from the MECM Console), and Boot Media ISO files (needed to create ConfigMgr USB Boot Media).</p>
+                    </div>
+
+                    <!-- Liens vers Documentation et MECM Console -->
+                    <div class="links-section">
+                        <a href="xx" class="external-link" target="_blank">Documentation</a>
+                        <a href="http:\\" class="external-link" target="_blank">MECM Console</a>
+                    </div>
+
+                    <div class="sections">
+                        <div class="section-card bootmedia-card">
+                            <img src="assets/images/bootmedia-icon.png" alt="BootMedia Icon" class="section-icon">
+                            <h2>BootMedia</h2>
+                            <p>*Please refer to the documentation before accessing this page.</p>
+                            <a href="#" class="bootmedia-button">Access BootMedia</a>
+                        </div>
+
+                        <div class="section-card">
+                            <i class="fas fa-file-alt"></i>
+                            <h2>Client LogFiles</h2>
+                            <p>*Please generate the desired log(s) from the MECM console before accessing this page.</p>
+                            <a href="#">Access LogFiles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Bulk Import -->
+                <div class="section-content" id="bulk">
+                    <h2>Bulk Import - importCIS.csv</h2>
+                    <form id="bulkUploadForm" class="upload-form">
+                        <div class="form-group">
+                            <label for="bulkFileUpload">Upload File (must be named importCIS.csv):</label>
+                            <input type="file" id="bulkFileUpload" name="fileUpload" accept=".csv" required>
+                            <span class="error-message" id="bulkFileUploadError"></span>
+                        </div>
+                        <div id="bulkUploadButtonContainer">
+                            <button type="submit" id="bulkUploadButton" class="upload-button" disabled>
+                                <i class="fas fa-arrow-up"></i> Upload
+                            </button>
+                        </div>
+                        <p id="bulkUploadStatus" class="upload-status"></p>
+                        <p id="bulkUploadProgress" class="upload-progress" style="display: none;">Uploading in progress please wait refresh page after 5mins</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="assets/images/bnp-paribas-logo.png" alt="BNP Paribas Logo" class="footer-bnp-logo">
+                    <span class="footer-bnp-text">BNP PARIBAS</span>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-text">@ 2025 BNP Paribas</span>
+                    <img src="assets/images/DW.png" alt="DW Logo" class="footer-logo">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Charger le script JavaScript -->
+    <script src="js/upload.js"></script>
+</body>
+</html>
